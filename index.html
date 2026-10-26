@@ -46,9 +46,9 @@
                 豌豆高茎 / 矮茎（Dd）
               </h2>
               <ul class="card-bullets">
-                <li>课本故事线：杂交 → 性状分离 → 假说 → 测交 → 定律</li>
-                <li>3D 细胞学实质：减Ⅰ后期等位基因随同源分离</li>
-                <li>高考情境：测交验证、基因型反推、配子比例</li>
+                <li>课本故事线 + 假说演绎 · 适用范围 · 自交≠自由交配</li>
+                <li>3D 细胞学实质 + 不完全显性 / 致死 2∶1 入门</li>
+                <li>做中学：测交 · 基因型反推 · 配子 · 特例</li>
               </ul>
               <button type="button" class="btn-start" data-goto="segregation">
                 开始讲解 <span class="arrow">→</span>
@@ -72,9 +72,9 @@
                 豌豆黄圆 / 绿皱（YyRr）
               </h2>
               <ul class="card-bullets">
-                <li>两对同源染色体 · 非等位基因独立分配</li>
-                <li>减Ⅰ中期两种赤道板取向对比</li>
-                <li>四种配子 YR : Yr : yR : yr = 1 : 1 : 1 : 1</li>
+                <li>课本故事线：黄圆×绿皱 → 9∶3∶3∶1 → 测交验证</li>
+                <li>3D 细胞学 + 拆分法 · 特殊比 9∶3∶4 / 15∶1 / 9∶6∶1</li>
+                <li>做中学：测交 · 拆分计算 · 多对连乘</li>
               </ul>
               <button type="button" class="btn-start" data-goto="independent">
                 开始讲解 <span class="arrow">→</span>
@@ -108,7 +108,7 @@
         </aside>
 
         <div class="caption-bar">
-          <span class="caption-step" id="seg-step-label">1 / 13</span>
+          <span class="caption-step" id="seg-step-label">1 / 18</span>
           <div class="caption-inner" id="seg-caption">加载中…</div>
         </div>
       </div>
@@ -117,8 +117,9 @@
     <!-- MODULE B: 自由组合 -->
     <section class="view" id="view-independent" aria-label="基因的自由组合定律">
       <div class="module-layout ind-layout">
-        <div class="stage-panel">
+        <div class="stage-panel" id="ind-stage">
           <div id="canvas-host-b"></div>
+          <div class="story-visual" id="ind-story" aria-hidden="true"></div>
         </div>
         <aside class="lesson-panel" id="ind-lesson">
           <div class="lesson-phase" id="ind-phase">自由组合定律</div>
@@ -134,6 +135,7 @@
             <div class="gamete-chip">yR</div>
             <div class="gamete-chip">yr</div>
           </div>
+          <div class="quiz-box" id="ind-quiz" hidden></div>
           <div class="lesson-nav">
             <button type="button" class="btn-nav btn-prev" id="ind-prev">上一步</button>
             <button type="button" class="btn-nav btn-next primary" id="ind-next">下一步</button>
@@ -141,7 +143,7 @@
           <div class="step-dots" id="ind-pills" role="tablist" aria-label="步骤导航"></div>
         </aside>
         <div class="caption-bar">
-          <span class="caption-step" id="ind-step-label">1 / 7</span>
+          <span class="caption-step" id="ind-step-label">1 / 18</span>
           <div class="caption-inner" id="ind-caption">加载中…</div>
         </div>
       </div>
