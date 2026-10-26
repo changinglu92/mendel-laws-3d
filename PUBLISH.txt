@@ -1,0 +1,15 @@
+花生壳静态托管发布信息
+========================
+公网链接（认领后生效）: https://xnaej8.kicp.fun
+认领链接（请用户浏览器打开）: https://xnaej8.kicp.fun?verify_code=0197
+resource_id: 1792975018794712290
+verify_code: 0197
+状态: 已上传，待认领（匿名创建超时未完成绑定）
+
+认领步骤:
+1. 用浏览器打开 https://xnaej8.kicp.fun?verify_code=0197
+2. 登录花生壳账号，点击「确认认领」
+3. 认领成功后访问 https://xnaej8.kicp.fun/ 即可打开课件
+
+本地路径: /workspace/mendel-laws-3d/index.html
+本地预览: python3 -m http.server 8877 -d /workspace/mendel-laws-3d

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>孟德尔遗传定律 · 一轮复习</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button type="button" class="btn-home" id="btn-home" title="返回首页 (Esc)">
+          <span aria-hidden="true">⌂</span> 首页
+        </button>
+      </div>
+      <div class="topbar-title" id="top-title">
+        孟德尔遗传定律 · 一轮复习
+        <span class="sub">深圳实验学校 · 高三生物</span>
+      </div>
+      <div class="topbar-right">
+        <button type="button" class="btn-ghost" id="btn-fs" title="全屏 / 退出全屏">全屏</button>
+        <span class="hint-fs" id="fs-hint">F11 / Esc</span>
+      </div>
+    </header>
+
+    <!-- HOME -->
+    <section class="view active" id="view-home" aria-label="选择教学模块">
+      <div class="home-body">
+        <div class="home-hero">
+          <h1>选择教学模块</h1>
+          <p>人教版课本豌豆实例 · 3D 减数分裂演示 · 一轮复习投影课件</p>
+        </div>
+        <div class="card-row">
+          <article class="entry-card" id="card-seg">
+            <div class="card-preview" id="preview-seg">
+              <div class="preview-fallback" aria-hidden="true">
+                <div class="chromo-pill chromo-d"><span class="allele top">D</span><span class="allele bot">D</span></div>
+                <span class="pair-label">同源</span>
+                <div class="chromo-pill chromo-d2"><span class="allele top">d</span><span class="allele bot">d</span></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h2>
+                <span class="law">基因的分离定律</span>
+                豌豆高茎 / 矮茎（Dd）
+              </h2>
+              <ul class="card-bullets">
+                <li>一对同源染色体 · 等位基因 D / d</li>
+                <li>3D 减数分裂：中期排列 → 同源分离 → 配子</li>
+                <li>强调：配子比例 1/2 D + 1/2 d 是计算底座</li>
+              </ul>
+              <button type="button" class="btn-start" data-goto="segregation">
+                开始讲解 <span class="arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="entry-card" id="card-ind">
+            <div class="card-preview" id="preview-ind">
+              <div class="preview-fallback" aria-hidden="true">
+                <div class="chromo-pill chromo-y"><span class="allele top">Y</span><span class="allele bot">Y</span></div>
+                <div class="chromo-pill chromo-y2"><span class="allele top">y</span><span class="allele bot">y</span></div>
+                <span class="pair-label">×</span>
+                <div class="chromo-pill chromo-r"><span class="allele top">R</span><span class="allele bot">R</span></div>
+                <div class="chromo-pill chromo-r2"><span class="allele top">r</span><span class="allele bot">r</span></div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h2>
+                <span class="law">基因的自由组合定律</span>
+                豌豆黄圆 / 绿皱（YyRr）
+              </h2>
+              <ul class="card-bullets">
+                <li>两对同源染色体 · 非等位基因独立分配</li>
+                <li>减Ⅰ中期两种赤道板取向对比</li>
+                <li>四种配子 YR : Yr : yR : yr = 1 : 1 : 1 : 1</li>
+              </ul>
+              <button type="button" class="btn-start" data-goto="independent">
+                开始讲解 <span class="arrow">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="home-footer">触控 · 鼠标拖拽旋转 · ← → 步进 · Esc 回首页 · 人教版课本例子</div>
+    </section>
+
+    <!-- MODULE A: 分离定律 -->
+    <section class="view" id="view-segregation" aria-label="基因的分离定律">
+      <div class="module-layout">
+        <div class="stage-panel">
+          <div class="stage-badge" id="seg-badge">步骤 1 / 6 · 初级性母细胞 Dd</div>
+          <div id="canvas-host"></div>
+          <div class="step-overlay">
+            <div class="step-pills" id="seg-pills" aria-hidden="true"></div>
+            <div class="nav-btns">
+              <button type="button" id="seg-prev">上一步</button>
+              <button type="button" class="primary" id="seg-next">下一步</button>
+            </div>
+          </div>
+        </div>
+        <aside class="side-panel">
+          <div class="tip-card">
+            <h3>📌 定律实质</h3>
+            <div class="essence" id="seg-essence">
+              在杂合子细胞中，等位基因随同源染色体的分开而分离，分别进入不同配子。
+            </div>
+            <div class="gaokao">
+              <strong>高考提醒：</strong>配子比例（1/2 D、1/2 d）是一切分离定律计算的底座；先写配子再写受精。
+            </div>
+            <div class="step-desc" id="seg-desc"></div>
+            <div class="legend">
+              <span class="legend-item"><span class="legend-dot" style="background:#2563eb"></span>含 D 的同源染色体</span>
+              <span class="legend-item"><span class="legend-dot" style="background:#60a5fa"></span>含 d 的同源染色体</span>
+            </div>
+          </div>
+        </aside>
+        <div class="caption-bar">
+          <span class="caption-step" id="seg-step-label">1 / 6</span>
+          <div class="caption-inner" id="seg-caption">加载中…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE B: 自由组合 -->
+    <section class="view" id="view-independent" aria-label="基因的自由组合定律">
+      <div class="module-layout">
+        <div class="stage-panel">
+          <div class="stage-badge" id="ind-badge">步骤 1 · F1 杂合子 YyRr</div>
+          <div id="canvas-host-b"></div>
+          <div class="step-overlay">
+            <div class="step-pills" id="ind-pills" aria-hidden="true"></div>
+            <div class="nav-btns">
+              <button type="button" id="ind-prev">上一步</button>
+              <button type="button" class="primary" id="ind-next">下一步</button>
+            </div>
+          </div>
+        </div>
+        <aside class="side-panel">
+          <div class="tip-card">
+            <h3>📌 定律实质</h3>
+            <div class="essence" id="ind-essence">
+              非同源染色体上的非等位基因自由组合；等位基因仍随同源染色体分离。
+            </div>
+            <div class="gaokao">
+              <strong>高考提醒：</strong>先判断两对基因是否位于非同源染色体；YyRr 产生四种配子各占 1/4。
+            </div>
+            <div class="poss-toggle" id="ind-poss" style="display:none">
+              <button type="button" data-poss="1" class="active">取向 ①</button>
+              <button type="button" data-poss="2">取向 ②</button>
+            </div>
+            <div class="step-desc" id="ind-desc"></div>
+            <div class="gamete-result" id="ind-gametes" style="display:none">
+              <div class="gamete-chip">YR</div>
+              <div class="gamete-chip">Yr</div>
+              <div class="gamete-chip">yR</div>
+              <div class="gamete-chip">yr</div>
+            </div>
+            <div class="legend">
+              <span class="legend-item"><span class="legend-dot" style="background:#d97706"></span>Y / y（颜色）</span>
+              <span class="legend-item"><span class="legend-dot" style="background:#059669"></span>R / r（形状）</span>
+            </div>
+          </div>
+        </aside>
+        <div class="caption-bar">
+          <span class="caption-step" id="ind-step-label">1 / 7</span>
+          <div class="caption-inner" id="ind-caption">加载中…</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/scenes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
